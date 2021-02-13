@@ -1,31 +1,15 @@
-def user_upload():
-    user_file = input(str("Please enter path to your file: "))
-    user_data = []
-    with open(user_file, 'r') as data_file:
-        user_data = data_file.readlines()
-    return user_data
+import lib
 
-def frequency_file_upload():
-    frequency_data = []
-    with open('frequency_lists/netflix12k.txt', 'r') as freq_data_file:
-        frequency_data = freq_data_file.readlines()
-    return frequency_data
+settings = lib.Settings()
+chosen_number = settings.set_list_number()
 
-def compare_data():
-    user_words = list(user_upload())
-    frequency_words = list(frequency_file_upload())
-    output_data = []
-    for word in user_words:
-        if word in frequency_words:
-            output_data.append('%s,%s' % (frequency_words.index(word), word))
-    return output_data
+frequency_list = lib.Frequency_list(chosen_number)
+chosen_list = frequency_list.upload_list()
 
-def writing_output_file():
-    output_data = list(compare_data())
-    print(output_data)
-    output_file_name = input("Please enter a new filename: ")
-    with open(output_file_name, 'w') as output_file:
-        for word in output_data:
-            output_file.write(word)
+user_input = lib.User_input()
+chosen_words = user_input.user_data_upload()
 
-writing_output_file()
+output = lib.Output(chosen_list, chosen_words)
+output.compare_data()
+output.print_output_data()
+output.write_output_file()
