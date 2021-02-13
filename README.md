@@ -12,5 +12,6 @@ https://www.python.org/
 
 No additional modules is required.
 
-To run the app write in terminal from app's folder:
-  python3 app.py
+To run the app - from app's folder run a Terminal (Windows Power-shell) and write:
+
+python3 app.py
