@@ -10,5 +10,7 @@ For Windows users:
 You can download and install Python3 from the official site
 https://www.python.org/
 
+No additional modules is required.
+
 To run the app write in terminal from app's folder:
   python3 app.py
