@@ -9,3 +9,6 @@ Write in terminal "sudo apt install python3" and press enter
 For Windows users:
 You can download and install Python3 from the official site
 https://www.python.org/
+
+To run the app write in terminal from app's folder:
+  python3 app.py
